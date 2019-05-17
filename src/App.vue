@@ -1,45 +1,15 @@
 <template>
   <div>
+    
     <router-view />
-  <footer class="footer_guide">
-    <a href="javascript:;" class="guide_item" :class="{on: $route.path==='/home'}" @click="gowalk('/home')">
-    <span class="item_icon">
-      <i class="iconfont iconshouye"></i>
-    </span>
-      <span>首页</span>
-    </a>
-    <a href="javascript:;" class="guide_item" :class="{on: $route.path==='/catalogue'}" @click="gowalk('/catalogue')">
-    <span class="item_icon">
-      <i class="iconfont iconleimupinleifenleileibie"></i>
-    </span>
-      <span>分类</span>
-    </a>
-    <a href="javascript:;" class="guide_item" :class="{on: $route.path==='/discren'}" @click="gowalk('/discren')">
-    <span class="item_icon">
-      <i class="iconfont iconphoto"></i>
-    </span>
-      <span>识物</span>
-    </a>
-    <a href="javascript:;" class="guide_item" :class="{on: $route.path==='/shopping'}" @click="gowalk('/shopping')">
-    <span class="item_icon">
-      <i class="iconfont icongouwuche2"></i>
-    </span>
-      <span>购物车</span>
-    </a>
-    <a href="javascript:;" class="guide_item" :class="{on: $route.path==='/personal'}" @click="gowalk('/personal')">
-    <span class="item_icon">
-      <i class="iconfont icontubiaozhizuomoban"></i>
-    </span>
-      <span>个人</span>
-    </a>
-   
-  </footer>
+    <FooterNav />
 
   </div>
 </template>
 
 <script>
-  import Footers from './components/Footers/Footers'
+  import Header from './components/Header/Header'
+  import FooterNav from './components/FooterNav/FooterNav'
   export default {
     name: "App",
     data(){
@@ -48,41 +18,34 @@
       }
     },
     components:{
-      Footers
-    },
-    methods:{
-      gowalk(path) {
-        this.$router.replace(path)
-      }
+      FooterNav,
+      Header
     }
+  
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-  .footer_guide
-    position fixed
-    z-index 100
-    left 0
-    right 0
-    bottom 0
-    background-color #fff
+  .my_split:before    /* 灰色顶部分割线 */
+    content ""
+    display block
     width 100%
-    height 50px
-    display flex
-    .guide_item
-      display flex
-      flex 1
-      text-align center
-      flex-direction column
-      align-items center
-      margin 5px
-      color #999999
-      &.on
-        color red
-      span
-        font-size 12px
-        margin-top 2px
-        margin-bottom 2px
-        .iconfont
-          font-size 22px
+    height 18px
+    border-top 1px solid rgba(7, 17, 27, 0.1)
+    border-bottom 1px solid rgba(7, 17, 27, 0.1)
+    background-color: #f3f5f7
+  
+  .line_two_point    /* 第二行出现省略号 */
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  input::-webkit-input-placeholder,
+  input:-moz-placeholder,
+  input::-moz-placeholder,
+  input:-ms-input-placeholder
+    color #f00
+    font-size 28px
 </style>
