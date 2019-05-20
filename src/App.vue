@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="app">
     
     <router-view />
-    <FooterNav />
+    <FooterNav v-show="$route.meta.isShowFoot"/>
 
   </div>
 </template>
@@ -10,6 +10,7 @@
 <script>
   import Header from './components/Header/Header'
   import FooterNav from './components/FooterNav/FooterNav'
+  
   export default {
     name: "App",
     data(){
@@ -19,13 +20,15 @@
     },
     components:{
       FooterNav,
-      Header
+      Header,
     }
   
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
+  .app
+    height 10000px
   .my_split:before    /* 灰色顶部分割线 */
     content ""
     display block

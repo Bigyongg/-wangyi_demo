@@ -4,6 +4,7 @@ import Discren from '../pages/Discren/Discren'
 import Home from '../pages/Home/Home'
 import Personal from '../pages/Personal/Personal'
 import Shopping from '../pages/Shopping/Shopping'
+import Search from '../components/Search/Search'
 
 
 
@@ -36,7 +37,7 @@ export default [
     path:'/personal',
     component:Personal,
     meta: {
-      isShowFoot: true
+      isShowFoot: false
     }
   },
 
@@ -45,6 +46,13 @@ export default [
     component:Shopping,
     meta: {
       isShowFoot: true
+    }
+  },
+  {
+    path:'/search',
+    component:Search,
+    meta: {
+      isShowFoot: false
     }
   },
 
