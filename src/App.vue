@@ -27,8 +27,8 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-  .app
-    height 10000px
+  /*.app*/
+    /*height 10000px*/
   .my_split:before    /* 灰色顶部分割线 */
     content ""
     display block

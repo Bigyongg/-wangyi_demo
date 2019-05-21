@@ -2,7 +2,7 @@
 	<div>
    <ul>
      <li class="home">
-       <a href="javasript:"  @click="this.$router.replace('/home')"><i class=" iconfont iconshouye1"></i></a>
+       <a href="javasript:"  @click="$router.replace('/home')"><i class=" iconfont iconshouye1"></i></a>
      </li>
      <li class="text">网易严选</li>
      <li class="two_icons">
@@ -22,7 +22,7 @@
     },
     methods:{
       goSearch(){
-        this.$router.replace('/search')
+        this.$router.push('/search')
       }
     }
     

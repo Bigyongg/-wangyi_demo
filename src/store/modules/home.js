@@ -1,4 +1,4 @@
-// 01.引入 请求函数
+// 01.从api引入 请求函数
 import {reqMockHome} from "../../api";
 
 // 02.定义数据类型  state

@@ -9,7 +9,7 @@ const prefix = '/api'
 export const reqMockHome = () => ajax('/mock/home');    // 请求mock数据
 
 // 搜索 关键字
-export const reqInitSearch = () => ajax(`${prefix}/xhr/search/init.json`, 'POST')
+export const reqInitSearch = () => ajax(`/mock/search/list`, 'POST')
 
 // 获取搜索结果
 export const reqSearchResult = (keywordPrefix) => ajax(`${prefix}/xhr/search/searchAutoComplete.json`, {keywordPrefix})

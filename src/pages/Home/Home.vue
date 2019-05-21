@@ -1,12 +1,18 @@
 <template>
 	<div>
     <Header />
-    <KJFSwiper />
-    <ServeClient />
-    <ProductClass  />
-    <OnePic />
-    <NewProduct />
-    <PersonalTailor />
+    <div class="wrap_home">
+        <div class="content">
+        <KJFSwiper />
+        <ServeClient />
+        <ProductClass  />
+        <OnePic />
+        <NewProduct />
+        <PersonalTailor />
+      </div>
+  </div>
+  
+  
   </div>
 </template>
 
@@ -18,8 +24,11 @@
   import OnePic from './components/OnePic/OnePic'  //一张图片
   import NewProduct from './components/NewProduct/NewProduct' //中间四小幅图
   import PersonalTailor from './components/PersonalTailor/PersonalTailor' //中间的轮播图
+  import BScroll from 'better-scroll'
+  import {mapState} from 'vuex'
   export default {
     name: "Home",
+    
     components:{
       Header,
       KJFSwiper,
@@ -29,11 +38,36 @@
       NewProduct,
       PersonalTailor,
     },
+    computed:{
+      ...mapState({
+        homeData: state=>state.home.homeData
+      })
+    },
+    async mounted(){
+      await this.$store.dispatch('GetHomedatas')
     
     
+    },
+    watch:{
+      homeData(){  //homeData 数据更新了
+        this.$nextTick(() => {
+          new BScroll('.wrap_home',{
+            click: true,
+            scrollY: true
+          })
+        })
+      }
+    }
+  
+  
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-
+  .wrap_home
+    width 100%
+    height 1406px
+    .content
+      width 100%
+      height 10000px
 </style>

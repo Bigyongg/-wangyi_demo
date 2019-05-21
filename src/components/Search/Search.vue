@@ -4,16 +4,29 @@
       <span class="icon"><i class=" iconfont iconweibiaoti-"></i></span>
       <input v-model="userInput" type="text" placeholder="美妆护肤 女王专享7折起">
       <span class="clear_img" v-if="userInput" @click="userInput=''">X</span>
-      <span class="canle" @click="$router.replace('/personal')">取消</span>
+      <span class="canle"  @click="$router.back()">取消</span>
+      
     </div>
-    
     <div class="hot_search">
       <span>热门搜索</span>
       <ul class="hot_search_list">
-        <li>上的对齐方式。</li>
-        <li>项目在主轴上的对齐方式。</li>
-        <li>属性定义了项目在主轴上的对齐方式。</li>
-        <li>ustify-c项目在主轴上的对齐方式。</li>
+        <li><a href="">爆款 行李箱</a></li>
+        <li><a href="">拖鞋</a></li>
+        <li><a href="">经典polo衫89元</a></li>
+        <li><a href="">风扇</a></li>
+        <li><a href="">517吃货节低至5折</a></li>
+        <li><a href="">袜子</a></li>
+        <li><a href="">酵素洗衣液</a></li>
+        <li><a href="">凉席</a></li>
+        <li><a href=""> 9.9元爆品超值购</a></li>
+        <li><a href="">女鞋</a></li>
+        <li><a href=""> 9.9元爆品超值购</a></li>
+        <li><a href="">女鞋</a></li>
+  
+  
+      
+
+
       </ul>
     </div>
   </div>
@@ -26,7 +39,7 @@
       return{
        userInput:''
       }
-    },
+    }
   }
 </script>
 
@@ -97,7 +110,6 @@
           
   .hot_search
     margin-top 28px
-    border 1px solid red
     width 100%
     span
       font-size: 28px
@@ -105,12 +117,15 @@
       margin-left 20px
     .hot_search_list
       margin-left 20px
-      border 1px solid red
       height 495px
       width 720px
-      padding 8px 15px
       li
-        margin 0 32px 0 0
+        padding 0 5px 0 5px
+        margin-top 15px
+        margin-bottom  15px
+        margin-right 82px
+        color #333
+        font-size: 30px
         display inline-block
         border 1px solid black
 </style>
